@@ -8,6 +8,7 @@
   <section id="carForm" class="row my-3 d-none">
     <div class="col-12">
       <div class="p-3 cool-form">
+        <!-- NOTE make sure our form validation works with the shcema validation that the API enforces -->
         <form onsubmit="app.CarsController.createCar()">
           <div class="mb-3">
             <label for="make" class="form-label">Car Make</label>
@@ -25,8 +26,8 @@
               name="year">
           </div>
           <div class="mb-3">
-            <!-- FIXME show how to pull number out of input and display -->
-            <label for="price" class="form-label">Car Price <span id="carPriceFromRange">500000</span></label>
+            <label for="price" class="form-label">Car Price $<span id="carPriceFromRange">500000</span></label>
+            <!-- NOTE onchange fires off whenever the inputs value changes -->
             <input onchange="app.CarsController.drawPrice()" type="range" class="form-range" id="price" min="0"
               max="1000000" name="price" required>
           </div>
